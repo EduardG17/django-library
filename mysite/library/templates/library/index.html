@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог книг</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; padding: 10px; background: #f4f4f4; border-radius: 5px; }
+        .author { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Каталог книг</h1>
+    <ul>
+        {% for edition in editions %}
+            <li>
+                <strong>{{ edition.title }}</strong><br>
+                <span class="author">Автор: {{ edition.author }}</span>
+            </li>
+        {% empty %}
+            <li>Книг пока нет. Добавьте их через админ-панель.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
